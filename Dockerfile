@@ -1,20 +1,16 @@
 FROM ghcr.io/astral-sh/uv:python3.12-alpine
 
-RUN adduser -D essnine
+RUN mkdir /root/app
 
-USER essnine
-
-RUN mkdir /home/essnine/app
-
-WORKDIR /home/essnine/app
+WORKDIR /root/app
 
 COPY . .
 
 RUN uv sync --frozen --no-dev --no-install-project
 
-EXPOSE 8000
+EXPOSE 80
 
-ENV PATH="/home/essnine/app/.venv/bin:$PATH"
+ENV PATH="/root/app/.venv/bin:$PATH"
 
 ENTRYPOINT [ ]
 

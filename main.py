@@ -37,7 +37,7 @@ def load_page(route):
 
 def main():
     load_posts()
-    uvicorn.run(app=app, host="0.0.0.0", port=8000)
+    uvicorn.run(app=app, host="0.0.0.0", port=80)
 
 
 if __name__ == "__main__":
