@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/static/favicon.png" />
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- import the webpage's javascript file -->
+    <script src="/static/scripts.js" defer></script>
+</head>
+
+<body onload="initPage();" class="">
+    <div class="parentBody" id="parentBody">
+        <div class="flex-container mainBody" id="mainBody">
+            <div class="flex-item" id="mainBodyDiv">
+                {body_content}
+            </div>
+            <div>
+                <p class="affirmationBox" id="affirmationBox" title="A little cheering-up for you :)">loading...</p>
+            </div>
+        </div>
+    </div>
+</body>
+<footer class="footer" id="footer">
+    <div class="flex-container footerMaster" id="footerMaster">
+        <div class="flex-container footerDarkMode">
+            <div class="flex-item toggleDarkMode"
+                title="I store no cookies. The night mode toggle is basic JS time checking. This site is mostly built from scratch.">
+                <label class="switch">
+                    <input type="checkbox" onclick="goDark(true)" id="goDarkToggle">
+                    <span class="slider round"></span>
+                </label>
+                <label class="toggleDarkText">
+                    🌙&nbsp
+                </label>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>

@@ -1,0 +1,7 @@
+.venv/
+.vscode/
+dist/
+*.pyc
+__pycache__/*
+quick_script.egg-info/*
+.python-version
