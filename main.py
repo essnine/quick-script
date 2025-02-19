@@ -1,3 +1,4 @@
+import os
 import sqlite3
 
 import uvicorn
@@ -5,6 +6,8 @@ from quart import Quart
 
 app = Quart(__name__, static_folder="static/")
 BASE_HTML = open("static/base.html", "r").read()
+HOST = os.getenv("HOST", "0.0.0.0")
+PORT = int(os.getenv("PORT", 80))
 
 
 def load_posts():
@@ -36,8 +39,7 @@ def load_page(route):
 
 
 def main():
-    load_posts()
-    uvicorn.run(app=app, host="0.0.0.0", port=80)
+    uvicorn.run(app=app, host=HOST, port=PORT)
 
 
 if __name__ == "__main__":

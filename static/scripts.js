@@ -55,7 +55,7 @@ function goDark(setInMemory = false) {
     var bodyElement = document.body;
     bodyElement.classList.toggle("dark-mode");
 
-    var footerElement = document.getElementById("mainBodyDiv");
+    var footerElement = document.getElementById("contentDiv");
     footerElement.classList.toggle("dark-mode");
 
     var footerElement = document.getElementById("footerMaster");
@@ -86,14 +86,6 @@ function checkStorageForConfig() {
         var configManualSetting = JSON.parse(localStorage.getItem("manualSetting"));
 
         // logging it here
-        console.table(
-            {
-                'configDarkMode': configDarkMode,
-                'configManualSetting': configManualSetting,
-                'darkMode': darkMode
-            }
-        )
-
         if (configManualSetting == true) {
             if (configDarkMode != darkMode) {
                 goDark();
@@ -140,11 +132,11 @@ function setAffirmation() {
     affirmationIndex = affirmations.length;
     affirmationText = affirmations[getRandomInt(affirmationIndex)];
     // console.log(affirmationText);
-    document.getElementById("affirmationBox").innerText = affirmationText
+    document.getElementById("affirmationBox").innerText = "( "+affirmationText+" )";
 }
 
 function initPage() {
     checkStorageForConfig();
-    setAffirmation();
+    setTimeout(setAffirmation, 2000);
     // darkModeCheck();
 }

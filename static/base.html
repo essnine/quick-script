@@ -13,21 +13,28 @@
     <script src="/static/scripts.js" defer></script>
 </head>
 
-<body onload="initPage();" class="">
+<header class="header" id="header">
+    <div class="flex-container headerMaster" id="headerMaster">
+        Hello
+    </div>
+</header>
+<body onload="initPage();">
+    <script>0</script>
     <div class="parentBody" id="parentBody">
         <div class="flex-container mainBody" id="mainBody">
-            <div class="flex-item" id="mainBodyDiv">
+            <div class="flex-item" id="contentDiv">
                 {body_content}
             </div>
-            <div>
-                <p class="affirmationBox" id="affirmationBox" title="A little cheering-up for you :)">loading...</p>
-            </div>
+            
         </div>
     </div>
 </body>
 <footer class="footer" id="footer">
     <div class="flex-container footerMaster" id="footerMaster">
         <div class="flex-container footerDarkMode">
+            <div class="flex-item">
+                <p class="affirmationBox" id="affirmationBox" title="A little cheering-up for you :)">loading...</p>
+            </div>
             <div class="flex-item toggleDarkMode"
                 title="I store no cookies. The night mode toggle is basic JS time checking. This site is mostly built from scratch.">
                 <label class="switch">
