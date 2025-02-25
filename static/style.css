@@ -69,26 +69,32 @@ body {
 }
 
 #contentDiv:hover {
-  box-shadow: 4px 8px 16px 0 rgba(7,16,24.4);
+  box-shadow: 4px 8px 16px 0 rgb(145, 159, 172);
 }
 
 
 .headerMaster {
   display: flex;
+  width: 100%;
   flex-direction: row;
-  position: fixed;
-  border: 1px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: black;
-  box-shadow: 0 4px 8px 0 rgba(7,16,24.2);
+  position: absolute;
+  border-bottom: 1px;
+  border-bottom-style: hidden;
+  border-bottom-width: 1px;
+  box-shadow: 0 4px 8px 0 inset rgba(7,16,24.2);
   transition: 0.3s;
   font-family: Verdana,sans-serif;
-  width: 100%;
-  height: 50px;
+  height: 2em;
   left: 0;
   top: 0;
-  background-color: #F0D9C5
+  padding-left: 1em;
+  padding-top: 0.5em;
+  background-color: transparent;
+}
+
+.headerDarkMode {
+  position: absolute;
+  display: block;
 }
 
 .footerInfoBox {
@@ -107,10 +113,7 @@ body {
   flex-direction: row;
   position: fixed;
   border: 1px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: black;
-  box-shadow: 0 4px 8px 0 rgba(7,16,24.2);
+  box-shadow: 0px -11px 10px -3px rgba(7,16,24.2);
   transition: 0.3s;
   font-family: Verdana,sans-serif;
   width: 100%;
