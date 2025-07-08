@@ -12,3 +12,7 @@ wheels/
 
 # Env files
 .envrc
+
+
+# Apple stuff
+.DS_Store
