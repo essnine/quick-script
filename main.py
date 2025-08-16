@@ -13,15 +13,19 @@ APP_HOST = getenv("APP_HOST", "0.0.0.0")
 
 def load_posts():
     paths = {}
-    db_conn = sqlite3.connect("site.sqlite.db")
-    db_conn.row_factory = sqlite3.Row
-    posts = [
-        dict(row) for row in db_conn.execute("select * from POSTS").fetchall()
-    ]
-    for post in posts:
-        paths[post["path"]] = BASE_HTML.format(
-            body_content=eval(post["md"]).decode("utf-8")
-        )
+    try:
+        db_conn = sqlite3.connect("site.sqlite.db")
+        db_conn.row_factory = sqlite3.Row
+        posts = [
+            dict(row) for row in db_conn.execute("select * from POSTS").fetchall()
+        ]
+        for post in posts:
+            paths[post["path"]] = BASE_HTML.format(
+                body_content=eval(post["md"]).decode("utf-8")
+            )
+    except Exception as exc:
+        app.logger.exception(f"Exception raised when loading posts from posts db {str(exc)}", stack_info=True)
+        exit()
     return paths
 
 
@@ -42,7 +46,7 @@ def load_page(route=None):
 
 
 def main():
-    print(PATHS.keys())
+    app.logger.info(PATHS.keys())
     uvicorn.run(app=app, host=APP_HOST, port=APP_PORT)
 
 
