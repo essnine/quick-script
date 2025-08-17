@@ -45,7 +45,7 @@ body {
 }
 
 .mainBody {
-  display: flex;
+  display: grid;
   width: 80%;
   margin: 10% 0 0 10%;
   flex-direction: column;
@@ -56,7 +56,14 @@ body {
   max-width: 80wd;
 }
 
+#postListDiv {
+  display: grid;
+  position: absolute;
+}
+
 #mainBodyDiv {
+  display: grid;
+  position: static;
   padding: 2px 16px;
   border: 1px;
   border-style: solid;
